@@ -1,0 +1,15 @@
+﻿
+
+@{
+    ViewData["Title"] = "Home Page";
+    var mylist = new List<Urlaub> { { new Urlaub("", new List<Models.Leave>()) } };
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Home Page</h1>
+</div>
+
+<div class="view-component">
+    @await Component.InvokeAsync("ThreeMonth", new { DateTime.Now, mylist })
+</div>
+
