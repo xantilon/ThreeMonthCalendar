@@ -1,0 +1,74 @@
+﻿@page
+@model IndexModel
+@{
+    var startDate = (DateTime)ViewData["startDate"];
+    var employees = (List<Employee>)ViewData["employees"];
+    DateTime GetMonth(int month) => new DateTime(DateTime.Now.AddMonths(month - 1).Year, DateTime.Now.AddMonths(month - 1).Month, 1);
+    int GetMaxDays(int month) => DateTime.DaysInMonth(GetMonth(month).Year, GetMonth(month).Month);
+}
+
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td></td>
+                @for (int m = 1; m <= 3; m++)
+                {
+                    DateTime month = GetMonth(m);
+                    <td class="cal-month" colspan="@GetMaxDays(m)">@month.ToString("MMMM") @month.ToString("yy")</td>
+                }
+            </tr>
+            <tr>
+                <td>Mitarbeiter</td>
+                @for (int m = 1; m <= 3; m++)
+                {
+                    DateTime month = GetMonth(m);
+                    @for (var i = 1; i <= GetMaxDays(m); i++)
+                    {
+                        DateTime day = month.AddDays(i - 1);
+                        if (day.DayOfWeek == DayOfWeek.Saturday || day.DayOfWeek == DayOfWeek.Sunday)
+                        {
+                            <td class="cal-weekend">@i<br />@(day.ToString("ddd"))</td>
+                        }
+                        else
+                        {
+                            <td class="cal-weekday">@i<br />@(day.ToString("ddd"))</td>
+                        }
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Employee e in employees)
+            {
+                <tr class="emp-row">
+                    <td class="emp-col">@e.Name</td>
+                    @*for (int d = 0; d < GetMaxDays(1)+GetMaxDays(2)+GetMaxDays(3); d++)
+                    {
+                        <td class="emp-day"></td>
+                    }*@
+                    @for (int m = 1; m <= 3; m++)
+                    {
+                        DateTime month = GetMonth(m);
+                        @for (var i = 1; i <= GetMaxDays(m); i++)
+                        {
+                            DateTime day = month.AddDays(i - 1);
+                            var leave = e.Leaves.FirstOrDefault(l => l.Day == day);
+                            if (leave is not null)
+                            {
+                                <td class="emp-day @leave.LeaveType"></td>
+                            }
+                            else
+                            {
+                                <td class="emp-day"></td>
+                            }
+                        }
+                    }
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,91 @@
+﻿
+body {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+table,
+th,
+td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0px;
+    border-width: 1px 0 0 1px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+caption,
+th,
+td {
+    font-weight: normal;
+    text-align: left;
+}
+
+th {
+    border-width: 0 1px 1px 0;
+    font-weight: bold;
+    line-height: 24px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px
+}
+
+td {
+    border-width: 0 1px 1px 0;
+    padding: 1px;
+}
+
+tr:nth-child(odd) {
+    background: #EEE;
+}
+
+td.cal-month {
+    font-size: large;
+    font-weight: bold;
+    color:red;
+}
+
+.cal-weekday,.cal-weekend {
+    font-size: 0.4em;
+    font-weight:400;
+    text-align:center;
+}
+
+.cal-weekend {
+    background-color: aquamarine;
+}
+
+
+.cal-weekday {
+    background-color: cornsilk;
+}
+
+
+.emp-row {
+    color: darkblue;
+    font-weight:700;
+    border-bottom: 1px solid black;
+}
+
+.emp-col {
+    border: 1px solid rgb(255, 216, 0);
+    background-color: cornsilk;
+    display: table-cell;
+    font-size: 0.6em;
+}
+
+.Urlaub {
+    background-color: green;
+}
+
+.Sonder {
+    background-color: purple;
+}
+.Krank {
+    background-color: red;
+}
