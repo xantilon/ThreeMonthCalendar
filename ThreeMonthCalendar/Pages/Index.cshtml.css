@@ -51,9 +51,10 @@ td.cal-month {
 }
 
 .cal-weekday,.cal-weekend {
-    font-size: 0.4em;
+    font-size: 0.5em;
     font-weight:400;
     text-align:center;
+    min-width: 12px;
 }
 
 .cal-weekend {
@@ -77,6 +78,8 @@ td.cal-month {
     background-color: cornsilk;
     display: table-cell;
     font-size: 0.6em;
+    min-width: 80px;
+    padding-left: 5px;
 }
 
 .Urlaub {
@@ -89,3 +92,9 @@ td.cal-month {
 .Krank {
     background-color: red;
 }
+
+.month-border {
+    border-left: 3px solid rgb(0 0 0 / 20%);
+}
+
+
