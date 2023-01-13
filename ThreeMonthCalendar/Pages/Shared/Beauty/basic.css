@@ -1,0 +1,99 @@
+
+
+html, body {
+  background-color: #fff;
+  margin: 10px;
+    font-family: sans-serif;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+.container > div:nth-child(1) {
+  background-color: #96ceb4;	
+}
+
+.container > div:nth-child(2) {
+  background-color: #ff6f69;
+}
+
+.container > div:nth-child(3) {
+  background-color: #88d8b0;
+}
+
+.threemonth {
+  display: flex;
+}
+
+.month{
+  margin: 96px auto;
+  width: 560px;
+  padding: 0px;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  display: flex;
+  background: #fff;
+  box-shadow: 0 10px 50px -15px rgba(0,0,0,0.75);
+  
+  position: relative;
+}
+
+.month:before{
+    position: absolute;
+    content: attr(data-year);
+    color: #E0E0E0;
+    top: -60px;
+    left: 10px;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+  }
+
+  .month:after {
+     position: absolute;
+      content: attr(data-month);
+      color: transparent;
+      text-shadow: 0 0 0 rgba(0,0,0,0.25);
+      font-family: sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      
+      transform-origin: 0 100%;
+      transform: translateX(0px) translateY(-40px);
+      top: 10px;
+      left: 10px;
+  }
+
+.month ul{
+  display: flex;
+  padding: 0;
+  margin: 0 1px;
+  list-style: none;
+  flex: 1;  
+  position: relative;
+}
+
+.month ul li{
+  padding: 0;
+  margin: 0;
+  height: 22px;
+  box-shadow: inset 0 0 0 1px #f0f0f0;
+  background: #F8F8F8;
+  min-width: 15px;
+}
+
+.month ul li:before{
+    content: attr(data-date);
+    color: transparent;
+    text-shadow: 0 0 0 rgba(0,0,0,0.25);
+    text-align: center;
+    right: -3px;
+    position: relative;
+    line-height: 24px;
+    font-size: 10px;
+  }
+  
+  .month ul li.weekend {
+    background: #EEEEEE;
+    box-shadow: inset 0 0 0 1px #E0E0E0;
+  }

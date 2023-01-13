@@ -1,0 +1,20 @@
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  justify-content: space-around; /* try to change this to center for example */
+}
+
+.home {
+  margin-right: auto;
+}
+
+/* Sign up for the full Flexbox course here:
+http://eepurl.com/dhjgB5
+*/
+
+
+
+.month{
+  display: flex;
+  justify-content: space-around
+}
